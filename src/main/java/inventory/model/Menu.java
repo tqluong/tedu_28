@@ -1,8 +1,9 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Set;
  */
 public class Menu implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private int parrentId;
 	private String url;
 	private String name;
@@ -19,13 +20,14 @@ public class Menu implements java.io.Serializable {
 	private Date createDate;
 	private Date updateDate;
 	private Set auths = new HashSet(0);
+	private List<Menu> child;
+	private String idMenu;
 
 	public Menu() {
 	}
 
-	public Menu(int id, int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
+	public Menu(int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
 			Date updateDate) {
-		this.id = id;
 		this.parrentId = parrentId;
 		this.url = url;
 		this.name = name;
@@ -35,9 +37,8 @@ public class Menu implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Menu(int id, int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
+	public Menu(int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
 			Date updateDate, Set auths) {
-		this.id = id;
 		this.parrentId = parrentId;
 		this.url = url;
 		this.name = name;
@@ -48,11 +49,11 @@ public class Menu implements java.io.Serializable {
 		this.auths = auths;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -120,4 +121,20 @@ public class Menu implements java.io.Serializable {
 		this.auths = auths;
 	}
 
+	public List<Menu> getChild() {
+		return child;
+	}
+
+	public void setChild(List<Menu> child) {
+		this.child = child;
+	}
+
+	public String getIdMenu() {
+		return idMenu;
+	}
+
+	public void setIdMenu(String idMenu) {
+		this.idMenu = idMenu;
+	}
+	
 }

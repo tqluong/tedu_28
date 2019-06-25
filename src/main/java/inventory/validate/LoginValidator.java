@@ -12,27 +12,31 @@ import org.springframework.validation.Validator;
 import inventory.model.User;
 import inventory.service.UserService;
 @Component
-public class LoginValidator implements Validator{
+public class LoginValidator implements Validator {
+
 	@Autowired
 	private UserService userService;
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
+
 		return clazz == User.class;
 	}
 
+	
 	public void validate(Object target, Errors errors) {
-		User users = (User) target;
+		User user = (User) target;
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "msg.required");
 		ValidationUtils.rejectIfEmpty(errors, "password", "msg.required");
-		if (!StringUtils.isEmpty(users.getUserName()) && !StringUtils.isEmpty(users.getPassword())) {
-			List<User> user = userService.findByProperty("userName", users.getUserName());
-			if(users!=null && !user.isEmpty()) {
-				if (!user.get(0).getPassword().equals(users.getPassword())) {
+		if(!StringUtils.isEmpty(user.getUserName()) && !StringUtils.isEmpty(user.getPassword())) {
+			List<User> users = userService.findByProperty("userName", user.getUserName());
+			if(user!=null && !users.isEmpty()) {
+				if(!users.get(0).getPassword().equals(user.getPassword())) {
 					errors.rejectValue("password", "msg.wrong.password");
 				}
 			}else {
 				errors.rejectValue("userName", "msg.wrong.username");
 			}
 		}
+		
 	}
+
 }

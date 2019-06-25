@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class History implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private ProductInfo productInfo;
 	private String actionName;
 	private int type;
@@ -22,9 +22,8 @@ public class History implements java.io.Serializable {
 	public History() {
 	}
 
-	public History(int id, ProductInfo productInfo, String actionName, int type, int qty, BigDecimal price,
-			int activeFlag, Date createDate, Date updateDate) {
-		this.id = id;
+	public History(ProductInfo productInfo, String actionName, int type, int qty, BigDecimal price, int activeFlag,
+			Date createDate, Date updateDate) {
 		this.productInfo = productInfo;
 		this.actionName = actionName;
 		this.type = type;
@@ -35,11 +34,11 @@ public class History implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

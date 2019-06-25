@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class ProductInfo implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private Category category;
 	private String code;
 	private String name;
@@ -19,16 +19,15 @@ public class ProductInfo implements java.io.Serializable {
 	private int activeFlag;
 	private Date createDate;
 	private Date updateDate;
-	private Set productInStocks = new HashSet(0);
-	private Set invoices = new HashSet(0);
 	private Set histories = new HashSet(0);
+	private Set invoices = new HashSet(0);
+	private Set productInStocks = new HashSet(0);
 
 	public ProductInfo() {
 	}
 
-	public ProductInfo(int id, Category category, String code, String name, String imgUrl, int activeFlag,
-			Date createDate, Date updateDate) {
-		this.id = id;
+	public ProductInfo(Category category, String code, String name, String imgUrl, int activeFlag, Date createDate,
+			Date updateDate) {
 		this.category = category;
 		this.code = code;
 		this.name = name;
@@ -38,9 +37,8 @@ public class ProductInfo implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public ProductInfo(int id, Category category, String code, String name, String description, String imgUrl,
-			int activeFlag, Date createDate, Date updateDate, Set productInStocks, Set invoices, Set histories) {
-		this.id = id;
+	public ProductInfo(Category category, String code, String name, String description, String imgUrl, int activeFlag,
+			Date createDate, Date updateDate, Set histories, Set invoices, Set productInStocks) {
 		this.category = category;
 		this.code = code;
 		this.name = name;
@@ -49,16 +47,16 @@ public class ProductInfo implements java.io.Serializable {
 		this.activeFlag = activeFlag;
 		this.createDate = createDate;
 		this.updateDate = updateDate;
-		this.productInStocks = productInStocks;
-		this.invoices = invoices;
 		this.histories = histories;
+		this.invoices = invoices;
+		this.productInStocks = productInStocks;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -126,12 +124,12 @@ public class ProductInfo implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Set getProductInStocks() {
-		return this.productInStocks;
+	public Set getHistories() {
+		return this.histories;
 	}
 
-	public void setProductInStocks(Set productInStocks) {
-		this.productInStocks = productInStocks;
+	public void setHistories(Set histories) {
+		this.histories = histories;
 	}
 
 	public Set getInvoices() {
@@ -142,12 +140,12 @@ public class ProductInfo implements java.io.Serializable {
 		this.invoices = invoices;
 	}
 
-	public Set getHistories() {
-		return this.histories;
+	public Set getProductInStocks() {
+		return this.productInStocks;
 	}
 
-	public void setHistories(Set histories) {
-		this.histories = histories;
+	public void setProductInStocks(Set productInStocks) {
+		this.productInStocks = productInStocks;
 	}
 
 }

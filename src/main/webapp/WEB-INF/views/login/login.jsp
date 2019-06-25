@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Inventory Management System !</title>
+    <title>Inventory Management</title>
 
     <!-- Bootstrap -->
     <link href="<c:url value="/resources/vendors/bootstrap/dist/css/bootstrap.min.css"/>" rel="stylesheet">
@@ -47,7 +47,7 @@
                 </div>
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button class="btn btn-default submit" type="submit">Log in</button>
               </div>
 
               <div class="clearfix"></div>
@@ -59,7 +59,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i> Inventory Management System !</h1>
-                  <p>Â©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form:form>

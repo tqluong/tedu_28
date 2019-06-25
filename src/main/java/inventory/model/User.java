@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class User implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private String userName;
 	private String password;
 	private String email;
@@ -23,9 +23,7 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	public User(int id, String userName, String password, String name, int activeFlag, Date createDate,
-			Date updateDate) {
-		this.id = id;
+	public User(String userName, String password, String name, int activeFlag, Date createDate, Date updateDate) {
 		this.userName = userName;
 		this.password = password;
 		this.name = name;
@@ -34,9 +32,8 @@ public class User implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public User(int id, String userName, String password, String email, String name, int activeFlag, Date createDate,
+	public User(String userName, String password, String email, String name, int activeFlag, Date createDate,
 			Date updateDate, Set userRoles) {
-		this.id = id;
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
@@ -47,11 +44,11 @@ public class User implements java.io.Serializable {
 		this.userRoles = userRoles;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

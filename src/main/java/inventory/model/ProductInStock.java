@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class ProductInStock implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private ProductInfo productInfo;
 	private int qty;
 	private int activeFlag;
@@ -18,8 +18,7 @@ public class ProductInStock implements java.io.Serializable {
 	public ProductInStock() {
 	}
 
-	public ProductInStock(int id, ProductInfo productInfo, int qty, int activeFlag, Date createDate, Date updateDate) {
-		this.id = id;
+	public ProductInStock(ProductInfo productInfo, int qty, int activeFlag, Date createDate, Date updateDate) {
 		this.productInfo = productInfo;
 		this.qty = qty;
 		this.activeFlag = activeFlag;
@@ -27,11 +26,11 @@ public class ProductInStock implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

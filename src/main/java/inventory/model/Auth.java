@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Auth implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private Menu menu;
 	private Role role;
 	private int permission;
@@ -19,8 +19,7 @@ public class Auth implements java.io.Serializable {
 	public Auth() {
 	}
 
-	public Auth(int id, Menu menu, Role role, int permission, int activeFlag, Date createDate, Date updateDate) {
-		this.id = id;
+	public Auth(Menu menu, Role role, int permission, int activeFlag, Date createDate, Date updateDate) {
 		this.menu = menu;
 		this.role = role;
 		this.permission = permission;
@@ -29,11 +28,11 @@ public class Auth implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

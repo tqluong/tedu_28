@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class Category implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private String name;
 	private String code;
 	private String description;
@@ -22,8 +22,7 @@ public class Category implements java.io.Serializable {
 	public Category() {
 	}
 
-	public Category(int id, String name, String code, int activeFlag, Date createDate, Date updateDate) {
-		this.id = id;
+	public Category(String name, String code, int activeFlag, Date createDate, Date updateDate) {
 		this.name = name;
 		this.code = code;
 		this.activeFlag = activeFlag;
@@ -31,9 +30,8 @@ public class Category implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Category(int id, String name, String code, String description, int activeFlag, Date createDate,
-			Date updateDate, Set productInfos) {
-		this.id = id;
+	public Category(String name, String code, String description, int activeFlag, Date createDate, Date updateDate,
+			Set productInfos) {
 		this.name = name;
 		this.code = code;
 		this.description = description;
@@ -43,11 +41,11 @@ public class Category implements java.io.Serializable {
 		this.productInfos = productInfos;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

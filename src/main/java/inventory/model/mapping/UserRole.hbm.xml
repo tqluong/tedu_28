@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated Jun 19, 2019 6:55:40 PM by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 25, 2019 12:33:30 PM by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="inventory_management" dynamic-insert="false" dynamic-update="false" mutable="true" name="inventory.model.UserRole" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="user_role">
-        <composite-id class="inventory.model.UserRoleId" mapped="false" name="id" unsaved-value="undefined">
-            <key-property name="id" type="int">
-                <column name="ID"/>
-            </key-property>
-            <key-property name="userId" type="int">
-                <column name="USER_ID"/>
-            </key-property>
-            <key-property name="roleId" type="int">
-                <column name="ROLE_ID"/>
-            </key-property>
-            <key-property name="activeFlag" type="int">
-                <column name="ACTIVE_FLAG"/>
-            </key-property>
-            <key-property name="createDate" type="timestamp">
-                <column length="19" name="CREATE_DATE"/>
-            </key-property>
-            <key-property name="updateDate" type="timestamp">
-                <column length="19" name="UPDATE_DATE"/>
-            </key-property>
-        </composite-id>
-        <many-to-one class="inventory.model.Role" embed-xml="true" fetch="select" insert="false" name="role" not-found="exception" optimistic-lock="true" unique="false" update="false">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="inventory.model.Role" embed-xml="true" fetch="select" insert="true" name="role" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="ROLE_ID" not-null="true"/>
         </many-to-one>
-        <many-to-one class="inventory.model.User" embed-xml="true" fetch="select" insert="false" name="user" not-found="exception" optimistic-lock="true" unique="false" update="false">
+        <many-to-one class="inventory.model.User" embed-xml="true" fetch="select" insert="true" name="user" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="USER_ID" not-null="true"/>
         </many-to-one>
+        <property generated="never" lazy="false" name="activeFlag" optimistic-lock="true" type="int" unique="false">
+            <column name="ACTIVE_FLAG" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="createDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="CREATE_DATE" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="updateDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="UPDATE_DATE" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

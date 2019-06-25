@@ -1,5 +1,5 @@
 package inventory.model;
-// Generated Jun 19, 2019 6:55:39 PM by Hibernate Tools 5.4.2.Final
+// Generated Jun 25, 2019 12:33:29 PM by Hibernate Tools 5.4.2.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class Role implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private String roleName;
 	private String description;
 	private int activeFlag;
@@ -22,8 +22,7 @@ public class Role implements java.io.Serializable {
 	public Role() {
 	}
 
-	public Role(int id, String roleName, String description, int activeFlag, Date createDate, Date updateDate) {
-		this.id = id;
+	public Role(String roleName, String description, int activeFlag, Date createDate, Date updateDate) {
 		this.roleName = roleName;
 		this.description = description;
 		this.activeFlag = activeFlag;
@@ -31,9 +30,8 @@ public class Role implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Role(int id, String roleName, String description, int activeFlag, Date createDate, Date updateDate,
-			Set auths, Set userRoles) {
-		this.id = id;
+	public Role(String roleName, String description, int activeFlag, Date createDate, Date updateDate, Set auths,
+			Set userRoles) {
 		this.roleName = roleName;
 		this.description = description;
 		this.activeFlag = activeFlag;
@@ -43,11 +41,11 @@ public class Role implements java.io.Serializable {
 		this.userRoles = userRoles;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

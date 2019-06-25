@@ -2,7 +2,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-               <p>Helloooooooosssss</p>
+               <p>Hello JavaSpring</p>
               </div>
             </div>
           </div>
